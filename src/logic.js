@@ -87,10 +87,52 @@ function move(gameState) {
     // random 
     // TODO: Step 2 - Don't hit yourself.
     // Use information in gameState to prevent your Battlesnake from colliding with itself.
-    // const mybody = gameState.you.body
+    const mybody = gameState.you.body
+    for (var i = 0; i < myBody.length; i++) {
+      const body = myBody[i]
+      // Body is below head
+      if (myHead.x == body.x && myHead.y - 1 == body.y) {
+        possibleMoves.down = false
+      }
+      // Body is above head
+      if (myHead.x == body.x && myHead.y + 1 == body.y) {
+        possibleMoves.up = false
+      }
+      // Body is left of head
+      if (myHead.x - 1 == body.x && myHead.y == body.y) {
+        possibleMoves.left = false
+      }
+      // Body is right of head
+      if (myHead.x + 1 == body.x && myHead.y == body.y) {
+        possibleMoves.right = false
+      }
+    }
 
     // TODO: Step 3 - Don't collide with others.
     // Use information in gameState to prevent your Battlesnake from colliding with others.
+    const snakes = gameState.board.snakes
+    for (var i = 0; i < snakes.length; i++) {
+      const snake = snakes[i]
+      for (var ii = 0; ii < snake.body.length; ii++) {
+        const body = snake.body[ii]
+        // Body is below head
+        if (myHead.x == body.x && myHead.y - 1 == body.y) {
+          possibleMoves.down = false
+        }
+        // Body is above head
+        if (myHead.x == body.x && myHead.y + 1 == body.y) {
+          possibleMoves.up = false
+        }
+        // Body is left of head
+        if (myHead.x - 1 == body.x && myHead.y == body.y) {
+          possibleMoves.left = false
+        }
+        // Body is right of head
+        if (myHead.x + 1 == body.x && myHead.y == body.y) {
+          possibleMoves.right = false
+        }
+      }
+    }
 
     // TODO: Step 4 - Find food.
     // Use information in gameState to seek out and find food.
