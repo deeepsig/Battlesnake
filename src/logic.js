@@ -71,6 +71,19 @@ function move(gameState) {
         possibleMoves.left = false;
         possibleMoves.right = true;
     }
+    else if (myHead.x == 0){
+        possibleMoves.left = false;
+    }
+    else if (myHead.y == 0){
+        possibleMoves.left = false;
+    }
+    else if (myHead.x == boardWidth-1){
+        possibleMoves.left = false;
+    }
+    else if (myHead.y == boardHeight){
+        possibleMoves.left = false;
+    }
+
     // random 
     // TODO: Step 2 - Don't hit yourself.
     // Use information in gameState to prevent your Battlesnake from colliding with itself.
