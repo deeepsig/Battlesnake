@@ -44,33 +44,33 @@ function move(gameState) {
     const boardWidth = gameState.board.width
     const boardHeight = gameState.board.height
     //x=0; y=0
-    if (myHead.x == 0 && myHead.y == 0) {
-        possibleMoves.down = false;
-        possibleMoves.up = true;
-        possibleMoves.left = false;
-        possibleMoves.right = true;
-    }
-    //x=width-1; y=0
-    if (myHead.x == boardWidth -1 && myHead.y == 0) {
-        possibleMoves.down = false;
-        possibleMoves.up = true;
-        possibleMoves.left = true;
-        possibleMoves.right = false;
-    }
-    //x=width-1; y=height -1
-    if (myHead.x == boardWidth -1 && myHead.y == boardHeight -1) {
-        possibleMoves.down = true;
-        possibleMoves.up = false;
-        possibleMoves.left = true;
-        possibleMoves.right = false;
-    }
-    //x=0; y=height -1
-    if (myHead.x == 0 && myHead.y == boardHeight -1) {
-        possibleMoves.down = true;
-        possibleMoves.up = false;
-        possibleMoves.left = false;
-        possibleMoves.right = true;
-    }
+    // if (myHead.x == 0 && myHead.y == 0) {
+    //     possibleMoves.down = false;
+    //     possibleMoves.up = true;
+    //     possibleMoves.left = false;
+    //     possibleMoves.right = true;
+    // }
+    // //x=width-1; y=0
+    // if (myHead.x == boardWidth -1 && myHead.y == 0) {
+    //     possibleMoves.down = false;
+    //     possibleMoves.up = true;
+    //     possibleMoves.left = true;
+    //     possibleMoves.right = false;
+    // }
+    // //x=width-1; y=height -1
+    // if (myHead.x == boardWidth -1 && myHead.y == boardHeight -1) {
+    //     possibleMoves.down = true;
+    //     possibleMoves.up = false;
+    //     possibleMoves.left = true;
+    //     possibleMoves.right = false;
+    // }
+    // //x=0; y=height -1
+    // if (myHead.x == 0 && myHead.y == boardHeight -1) {
+    //     possibleMoves.down = true;
+    //     possibleMoves.up = false;
+    //     possibleMoves.left = false;
+    //     possibleMoves.right = true;
+    // }
     //general main positions
     if (myHead.x == 0) {
         possibleMoves.left = false
