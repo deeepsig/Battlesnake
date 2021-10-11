@@ -41,9 +41,50 @@ function move(gameState) {
 
     // TODO: Step 1 - Don't hit walls.
     // Use information in gameState to prevent your Battlesnake from moving beyond the boundaries of the board.
-    // const boardWidth = gameState.board.width
-    // const boardHeight = gameState.board.height
-
+    const boardWidth = gameState.board.width
+    const boardHeight = gameState.board.height
+    //x=0; y=0
+    if (myHead.x == 0 && myHead.y == 0) {
+        possibleMoves.down = false;
+        possibleMoves.up = true;
+        possibleMoves.left = false;
+        possibleMoves.right = true;
+    }
+    //x=width-1; y=0
+    else if (myHead.x == boardWidth -1 && myHead.y == 0) {
+        possibleMoves.down = false;
+        possibleMoves.up = true;
+        possibleMoves.left = true;
+        possibleMoves.right = false;
+    }
+    //x=width-1; y=height -1
+    else if (myHead.x == boardWidth -1 && myHead.y == boardHeight -1) {
+        possibleMoves.down = true;
+        possibleMoves.up = false;
+        possibleMoves.left = true;
+        possibleMoves.right = false;
+    }
+    //x=0; y=height -1
+    else if (myHead.x == 0 && myHead.y == boardHeight -1) {
+        possibleMoves.down = true;
+        possibleMoves.up = false;
+        possibleMoves.left = false;
+        possibleMoves.right = true;
+    }
+    //general main positions
+    else if (myHead.x == 0) {
+        possibleMoves.left = false
+      }
+    else if (myHead.y == 0) {
+        possibleMoves.down = false
+      } 
+    else if (myHead.x == boardWidth - 1) {
+        possibleMoves.right = false
+      } 
+    else if (myHead.y == boardHeight - 1) {
+        possibleMoves.up = false
+      }
+    // random 
     // TODO: Step 2 - Don't hit yourself.
     // Use information in gameState to prevent your Battlesnake from colliding with itself.
     // const mybody = gameState.you.body
