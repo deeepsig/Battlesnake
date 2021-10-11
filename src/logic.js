@@ -75,13 +75,13 @@ function move(gameState) {
         possibleMoves.left = false;
     }
     else if (myHead.y == 0){
-        possibleMoves.left = false;
+        possibleMoves.down = false;
     }
     else if (myHead.x == boardWidth-1){
-        possibleMoves.left = false;
+        possibleMoves.right = false;
     }
     else if (myHead.y == boardHeight){
-        possibleMoves.left = false;
+        possibleMoves.up = false;
     }
 
     // random 
